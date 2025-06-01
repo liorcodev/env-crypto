@@ -1,0 +1,25 @@
+// Bun Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Default Test Suite should throw error if encryption key is missing 1`] = `"Environment variable ENV_CRYPTO_KEY not found"`;
+
+exports[`Default Test Suite should throw error if decryption key is missing 1`] = `"Decryption key not found in environment variable ENV_CRYPTO_KEY"`;
+
+exports[`Default Test Suite should throw error if encrypted file is malformed 1`] = `"JSON Parse error: Unexpected identifier "This""`;
+
+exports[`Default Test Suite should throw error for path traversal attempts 1`] = `"Invalid file path: outside working directory"`;
+
+exports[`Default Test Suite should throw error for path traversal attempts 2`] = `"ENOENT: no such file or directory, open 'C:\\Users\\lior3\\Development\\env-crypto\\.env'"`;
+
+exports[`Default Test Suite should throw error for path traversal attempts 3`] = `"Invalid file path: outside working directory"`;
+
+exports[`Default Test Suite should throw error for path traversal attempts 4`] = `"Invalid file path: outside working directory"`;
+
+exports[`Default Test Suite should throw error for path traversal attempts 5`] = `"Invalid file path: outside working directory"`;
+
+exports[`Default Test Suite should handle encrypted file missing required fields 1`] = `"Invalid encrypted file format: missing required fields"`;
+
+exports[`Default Test Suite should handle encrypted file missing required fields 2`] = `"Invalid encrypted file format: missing required fields"`;
+
+exports[`Default Test Suite should handle encrypted file missing required fields 3`] = `"Invalid encrypted file format: missing required fields"`;
+
+exports[`Default Test Suite should handle encrypted file missing required fields 4`] = `"Invalid encrypted file format: missing required fields"`;

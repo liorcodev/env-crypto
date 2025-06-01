@@ -1,0 +1,79 @@
+{
+  "name": "env-crypto",
+  "version": "1.0.0",
+  "description": "A utility for strong encryption and decryption of .env files in Node.js and Bun applications, featuring CLI and programmatic access.",
+  "author": "lior cohen",
+  "homepage": "https://github.com/liorcodev/env-crypto#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liorcodev/env-crypto.git"
+  },
+  "bugs": {
+    "url": "https://github.com/liorcodev/env-crypto/issues"
+  },
+  "license": "MIT",
+  "keywords": [
+    "environment",
+    "variables",
+    "encryption",
+    "decryption",
+    "env-crypto",
+    "cli"
+  ],
+  "bin": {
+    "env-crypto": "./dist/cli/env-crypto.js"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.28.0",
+    "@types/benchmark": "^2.1.5",
+    "@types/bun": "latest",
+    "eslint": "^9.28.0",
+    "globals": "^16.2.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2",
+    "prettier": "^3.5.3",
+    "tsup": "^8.5.0",
+    "typescript-eslint": "^8.33.0"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "bun": ">=1.0.0"
+  },
+  "scripts": {
+    "prepare": "husky",
+    "lint": "bun eslint",
+    "lint:fix": "bun eslint --fix",
+    "lint-staged": "lint-staged",
+    "test:coverage": "bun test --coverage",
+    "build": "tsup",
+    "format": "prettier --write \"src/**/*.ts\" \"scripts/**/*.js\" \"tests/**/*.ts\"",
+    "size": "bun run scripts/bundle-size.js",
+    "prepublishOnly": "bun run format && bun run lint:fix && bun run test:coverage && bun run build && bun run size"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  }
+}
